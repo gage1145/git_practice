@@ -1,0 +1,91 @@
+---
+title: Git Demonstration
+date: 11-26-2024
+format:
+    pdf:
+        documentclass: article
+        papersize: letter
+        mainfont: Times New Roman
+author:
+    - name: 
+        given: Gage
+        family: Rowden
+      id: GR
+      orcid: 0000-0002-7517-0480
+      email: rowde002@umn.edu
+      affiliation:
+          name: University of Minnesota
+          city: Saint Paul
+          state: MN
+      corresponding: true
+
+    - name: 
+        given: Sarah
+        family: Gresch
+      id: SG
+      orcid: 0000-0002-7517-0481
+      email: rowde002@umn.edu
+      affiliation:
+          name: University of Minnesota
+          city: Saint Paul
+          state: MN
+      corresponding: true
+
+    - name: Albert Einstein
+      orcid: 0000-0000-0000-0001
+      email: email-not-invented@aol.com
+      affiliation:
+          name: Princeton University
+          city: Newark
+          state: NJ
+abstract: Git can be difficult to learn, but is very rewarding in the end!
+keywords: [git, github, Quarto]
+bibliography:
+    references.bib
+bibliographystyle: 
+    apa
+---
+<!-- # Git Demonstration
+
+#### Authors
+Gage Rowden<sup>1</sup>, Second Author<sup>2</sup>
+
+#### Affiliations
+<sup>1</sup>University of Minnesota\
+<sup>2</sup>Colorado State University
+
+## Abstract
+Yada yada. -->
+
+
+
+
+## Introduction
+In the beginning, there was nothing.
+
+## Materials & Methods
+
+### RT-QuIC
+RT-QuIC was performed like it should be according to @Schwabenlander2021.
+
+### Statistical Analysis
+We did the stats like we always have.\
+We used MPR, described by @Rowden2023.
+
+## Results
+
+| **Sample** | **MPR** | **RAF** | **p-value** |  **Result**  |
+|:----------:|:-------:|:-------:|:-----------:|:------------:|
+|      1     |    12   |    .4   |     .001    |   Detected   |
+|      2     |    2    |   .005  |     .12     |    Suspect   |
+|      3     |   1.8   |    0    |     .999    | Not Detected |
+
+## Discussion
+We're not really sure what is going on here.
+
+
+{{< pagebreak >}}
+
+## References
+::: {#refs}
+:::
