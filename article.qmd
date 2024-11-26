@@ -92,6 +92,21 @@ We used MPR, described by @Rowden2023.
 |      2     |    2    |   .005  |     .12     |    Suspect   |
 |      3     |   1.8   |    0    |     .999    | Not Detected |
 
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+#| label: fig-cap-margin
+#| fig-cap: "MPG vs horsepower, colored by transmission."
+#| cap-location: bottom
+library(tidyverse)
+library(ggplot2)
+
+mtcars %>%
+  # mutate(cyl = factor(cyl)) %>%
+  ggplot(aes(cyl, mpg, color = hp)) +
+    geom_point() +
+    geom_smooth(formula = y ~ x, method = "loess") +
+    theme(legend.position = 'bottom')
+```
+
 ## Discussion
 We're not really sure what is going on here.
 
