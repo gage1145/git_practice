@@ -9,3 +9,6 @@
 
 ## Quarto
 [Quarto Documentation](https://quarto.org/docs)
+
+## Tables
+[Table Generator](https://www.tablesgenerator.com/)
