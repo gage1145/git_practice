@@ -1,11 +1,11 @@
 ---
 title: Git Demonstration
 date: 11-26-2024
-format:
-    pdf:
-        documentclass: article
-        papersize: letter
-        mainfont: Times New Roman
+format: html
+    # pdf:
+    #     documentclass: article
+    #     papersize: letter
+    #     mainfont: Times New Roman
 author:
     - name: 
         given: Gage
@@ -76,7 +76,7 @@ RT-QuIC was performed like it should be according to @Schwabenlander2021.
 
 ### Statistical Analysis
 We did the stats like we always have.\
-We used MPR, described by @Rowden2023.
+We used MPR, described in @Rowden2023.
 
 ## Results
 
@@ -87,18 +87,62 @@ We used MPR, described by @Rowden2023.
 |      3     |   1.8   |    0    |     .999    | Not Detected |
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-#| label: fig-cap-margin
-#| fig-cap: "MPG vs horsepower, colored by transmission."
+library(kableExtra)
+
+kable(mtcars, "html")
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+#| label: fig-cap
+#| layout-ncol: 2
+#| fig-cap:
+#|  - "MPG vs cylinders"
+#|  - "Displacement vs weight"
 #| cap-location: bottom
+
 library(tidyverse)
-library(ggplot2)
 
 mtcars %>%
-  # mutate(cyl = factor(cyl)) %>%
-  ggplot(aes(cyl, mpg, color = hp)) +
-    geom_point() +
-    geom_smooth(formula = y ~ x, method = "loess") +
-    theme(legend.position = 'right')
+  ggplot(aes(x = cyl, y = mpg)) +
+    geom_point(size = 3, position = position_jitter(width = 0.05)) +
+    geom_smooth(formula = y ~ x, method = "lm") +
+    geom_smooth(
+        formula = y ~ x, 
+        method = "loess", 
+        linetype = "dashed", 
+        color = "red", 
+        fill = "red", 
+        alpha = 0.1
+    ) +
+    labs(
+        title = "Cylinders vs. Miles per Gallon",
+        x = "Number of Cylinders",
+        y = "Miles per Gallon"
+    ) +
+    theme(
+        plot.title = element_text(hjust = 0.5)
+    )
+
+mtcars %>%
+  ggplot(aes(x = disp, y = wt)) +
+    geom_point(size = 3) +
+    geom_smooth(formula = y ~ x, method = "lm") +
+    geom_smooth(
+        formula = y ~ x, 
+        method = "loess", 
+        linetype = "dashed", 
+        color = "red", 
+        fill = "red", 
+        alpha = 0.1
+    ) +
+    labs(
+        title = "Displacement vs. Weight",
+        x = "Weight (1000 lbs)",
+        y = "Displacement (cu.in.)"
+    ) +
+    theme(
+        plot.title = element_text(hjust = 0.5)
+    )
 ```
 
 ## Discussion
