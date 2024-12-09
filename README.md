@@ -4,6 +4,8 @@
 
 [Leveraging Git and GitHub for Academic Collaboration](https://www.dbbrunson.com/docs/effective-online-presence/need-and-toolkit/leveraging-git-github/)
 
+[Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+
 ## Managing Citations
 [Managing Citations in Markdown](https://mystmd.org/guide/citations)
 
